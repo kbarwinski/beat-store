@@ -1,0 +1,60 @@
+.Collapsible {
+  width: 90%;
+  font-family: "Rubik";
+  font-size: 2vmax;
+  z-index: 5;
+  overflow: visible;
+}
+
+.Collapsible__contentOuter {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+}
+
+.Collapsible__contentInner {
+  height: auto;
+
+  padding: 10px;
+  background-color: #000000;
+  p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Collapsible__trigger {
+  display: block;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #363636;
+  padding: 10px;
+  background: #111111;
+  color: white;
+
+  &:after {
+    content: "⛛";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: block;
+    transition: transform 300ms;
+  }
+
+  &.is-open {
+    &:after {
+      transform: rotateZ(180deg);
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.5;
+    background-color: grey;
+  }
+}
