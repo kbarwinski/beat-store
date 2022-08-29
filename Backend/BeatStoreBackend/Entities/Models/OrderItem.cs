@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Entities.Models
         [Column("OrderItemId")]
         public Guid Id { get; set; }
 
+        [Required(ErrorMessage="AudioItemId is a required field.")]
         public Guid AudioItemId { get; set; }
 
         [ForeignKey("AudioItemId")]
@@ -21,6 +23,7 @@ namespace Entities.Models
         [ForeignKey("OrderId")]
         public Order Order { get; set; }
 
+        [Required(ErrorMessage="LicenseType is a required field.")]
         public string LicenseType { get; set; }
     }
 }

@@ -18,12 +18,15 @@ namespace Entities.Models
         public string Title { get; set; }
 
         [Required(ErrorMessage="BPM is a required field.")]
+        [Range(0,int.MaxValue)]
         public int Bpm { get; set; }
 
         [Required(ErrorMessage="Lease price is a required field.")]
+        [Range(0,double.MaxValue)]
         public decimal LeasePrice { get; set; }
 
         [Required(ErrorMessage ="Exclusive price is a required field.")]
+        [Range(0,double.MaxValue)]
         public decimal ExclusivePrice { get; set; }
 
         [Required(ErrorMessage = "Audio URL is a required field.")]

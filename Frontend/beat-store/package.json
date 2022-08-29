@@ -1,7 +1,7 @@
 {
   "name": "beat-store",
   "version": "0.1.0",
-  "homepage": "https://elseifenjoyer.github.io/beat-store-demo",
+  "homepage": "https://kajetanbarwinski.github.io/beat-store-demo",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
