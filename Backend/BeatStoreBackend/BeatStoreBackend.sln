@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeatStoreBackend", "BeatSto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{D610F49A-49C1-4815-ABD8-C1F661774197}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "Contracts\Contracts.csproj", "{611093B5-8E6C-4660-AADD-76C5A0A0E761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "Contracts\Contracts.csproj", "{611093B5-8E6C-4660-AADD-76C5A0A0E761}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{51FC1C35-E466-4D02-9E35-5E993BA590A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositories\Repositories.csproj", "{51FC1C35-E466-4D02-9E35-5E993BA590A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{1513576F-907D-4312-B550-88E159004CBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{51FC1C35-E466-4D02-9E35-5E993BA590A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51FC1C35-E466-4D02-9E35-5E993BA590A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51FC1C35-E466-4D02-9E35-5E993BA590A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1513576F-907D-4312-B550-88E159004CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1513576F-907D-4312-B550-88E159004CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1513576F-907D-4312-B550-88E159004CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1513576F-907D-4312-B550-88E159004CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

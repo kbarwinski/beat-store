@@ -15,6 +15,12 @@ namespace BeatStoreBackend.UtilityServices
 
         public async Task<string> SaveFileAsStaticResource(IFormFile file, string folderName, string destFilename)
         {
+            if (folderName == null)
+                throw new ArgumentNullException(nameof(folderName), "Folder name is null.");
+            if (destFilename == null)
+                throw new ArgumentNullException(nameof(destFilename), "Destination filename is null.");
+
+
             string folderPath = Path.Combine(webHostEnvironment.WebRootPath, folderName);
             Directory.CreateDirectory(folderPath);
             if (file.Length > 0)
@@ -27,7 +33,7 @@ namespace BeatStoreBackend.UtilityServices
 
                 var request = httpContextAccessor.HttpContext?.Request;
                 if (request == null)
-                    throw new InvalidOperationException("No corresponding request found.");
+                    throw new ArgumentNullException(nameof(request),"No corresponding request found.");
 
                 return $"{request.Scheme}://{request.Host}{request.PathBase.ToUriComponent()}/{folderName}/{filenameWithExtension}";
             }
