@@ -56,4 +56,6 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 
 app.MapControllers();
 
+app.MigrateDatabase();
+
 app.Run();
