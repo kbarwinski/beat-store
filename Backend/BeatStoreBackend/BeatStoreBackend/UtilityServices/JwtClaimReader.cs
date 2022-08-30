@@ -15,9 +15,22 @@ namespace BeatStoreBackend.UtilityServices
 
         public string ReadClaimFromHeader(string claimToRead)
         {
-            var jwt = contextAccessor.HttpContext?.
-                Request.Headers["Authorization"].
-                ToString().Split(" ")[1];
+            var headerContents = contextAccessor.HttpContext?.
+                Request.Headers["Authorization"].ToString().Split(" ");
+            if(headerContents == null)
+            {
+                string message = "Header is null.";
+                logger.LogError(message);
+                throw new ArgumentNullException(nameof(headerContents), message);
+            }
+            if(headerContents.Length < 2)
+            {
+                string message = "Provided header content is invalid.";
+                logger.LogError(message);
+                throw new InvalidOperationException(message);
+            }
+
+            var jwt = headerContents[1];
             
             if (string.IsNullOrEmpty(jwt))
             {
@@ -25,6 +38,7 @@ namespace BeatStoreBackend.UtilityServices
                 logger.LogError(message);
                 throw new InvalidOperationException(message);
             }
+
             var handler = new JwtSecurityTokenHandler();
             var jwtToken = handler.ReadJwtToken(jwt);
 
